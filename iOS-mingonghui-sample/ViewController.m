@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "MGHModuleManager.h"
 
 @interface ViewController ()
+
+@property (nonatomic, strong) UIButton *btn;
 
 @end
 
@@ -16,14 +19,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    self.navigationItem.title = @"云码通";
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
+    [btn setTitle:@"智慧劳务" forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(onButtonClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
+    
+    self.btn = btn;
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+     
+    [self.btn sizeToFit];
+    self.btn.center = self.view.center;
 }
 
+- (void)onButtonClick {
+    [MGHModuleManager startModuleWithServiceProduction:NO fromViewController:self];
+}
 
 @end

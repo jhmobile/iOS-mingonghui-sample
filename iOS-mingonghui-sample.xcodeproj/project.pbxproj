@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40925B2DCCA2D650CE7891CE /* libPods-iOS-mingonghui-sample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FB957E173605A8DD9E85C2C /* libPods-iOS-mingonghui-sample.a */; };
 		F261A10021941D920083A24A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F261A0FF21941D920083A24A /* AppDelegate.m */; };
 		F261A10321941D920083A24A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F261A10221941D920083A24A /* ViewController.m */; };
 		F261A10621941D930083A24A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F261A10421941D920083A24A /* Main.storyboard */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0FB957E173605A8DD9E85C2C /* libPods-iOS-mingonghui-sample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS-mingonghui-sample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9920B337A1E1B25D8FDD0A27 /* Pods-iOS-mingonghui-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-mingonghui-sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS-mingonghui-sample/Pods-iOS-mingonghui-sample.release.xcconfig"; sourceTree = "<group>"; };
+		CB16A95F8F968313111DE1F9 /* Pods-iOS-mingonghui-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-mingonghui-sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS-mingonghui-sample/Pods-iOS-mingonghui-sample.debug.xcconfig"; sourceTree = "<group>"; };
 		F261A0FB21941D920083A24A /* iOS-mingonghui-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-mingonghui-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F261A0FE21941D920083A24A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F261A0FF21941D920083A24A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -33,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40925B2DCCA2D650CE7891CE /* libPods-iOS-mingonghui-sample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A1CFC0B0E73547A3DCECC6F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0FB957E173605A8DD9E85C2C /* libPods-iOS-mingonghui-sample.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5087258264F4DA0561783739 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CB16A95F8F968313111DE1F9 /* Pods-iOS-mingonghui-sample.debug.xcconfig */,
+				9920B337A1E1B25D8FDD0A27 /* Pods-iOS-mingonghui-sample.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F261A0F221941D920083A24A = {
 			isa = PBXGroup;
 			children = (
 				F261A0FD21941D920083A24A /* iOS-mingonghui-sample */,
 				F261A0FC21941D920083A24A /* Products */,
+				5087258264F4DA0561783739 /* Pods */,
+				1A1CFC0B0E73547A3DCECC6F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,9 +102,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F261A11121941D940083A24A /* Build configuration list for PBXNativeTarget "iOS-mingonghui-sample" */;
 			buildPhases = (
+				09CC31C97E3AA95AEA767453 /* [CP] Check Pods Manifest.lock */,
 				F261A0F721941D920083A24A /* Sources */,
 				F261A0F821941D920083A24A /* Frameworks */,
 				F261A0F921941D920083A24A /* Resources */,
+				14673A4C28D0E0875653590E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -135,6 +161,59 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		09CC31C97E3AA95AEA767453 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iOS-mingonghui-sample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		14673A4C28D0E0875653590E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-iOS-mingonghui-sample/Pods-iOS-mingonghui-sample-resources.sh",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/MingonghuiSDK/MingonghuiSDK/Assets/ios.zip",
+				"${PODS_ROOT}/MingonghuiSDK/MingonghuiSDK/Assets/Platform.json",
+				"${PODS_ROOT}/MingonghuiSDK/MingonghuiSDK/Assets/Router.json",
+				"${PODS_ROOT}/PaySDK/PaySDK/SDK/ExBankCardRes.bundle",
+				"${PODS_ROOT}/PaySDK/PaySDK/SDK/ExCardRes.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/PaySDK/ZQPayKitResource.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ios.zip",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Platform.json",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Router.json",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ExBankCardRes.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ExCardRes.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ZQPayKitResource.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOS-mingonghui-sample/Pods-iOS-mingonghui-sample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F261A0F721941D920083A24A /* Sources */ = {
@@ -281,32 +360,40 @@
 		};
 		F261A11221941D940083A24A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB16A95F8F968313111DE1F9 /* Pods-iOS-mingonghui-sample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "iOS-mingonghui-sample/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zqpay.zl.iOS-mingonghui-sample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		F261A11321941D940083A24A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9920B337A1E1B25D8FDD0A27 /* Pods-iOS-mingonghui-sample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "iOS-mingonghui-sample/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zqpay.zl.iOS-mingonghui-sample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
