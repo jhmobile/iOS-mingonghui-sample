@@ -26,7 +26,11 @@ end
 #import "MGHModuleManager.h"
 
 - (void)onButtonClick {
-  // 参数NO表示使用测试环境，YES表示使用生产环境；参数self表示当前viewController。
+  // 参数NO表示使用测试环境，YES表示使用生产环境；uid:基座uid；channelId：云码通在统一账户的渠道id；参数self表示当前viewController。
   [MGHModuleManager startModuleWithServiceProduction:NO uid:@"61" channelId:@"0" fromViewController:self];
 }
 </p></pre>
+
+### 测试账号
+11112018111 123456
+11112018112 123456
