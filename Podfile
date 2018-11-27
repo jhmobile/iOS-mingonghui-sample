@@ -7,6 +7,6 @@ target 'iOS-mingonghui-sample' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
   # use_frameworks!
 
-  pod 'MingonghuiSDK'
+  pod 'MingonghuiSDK', '0.1.1'
 
 end

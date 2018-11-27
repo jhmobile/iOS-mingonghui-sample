@@ -38,7 +38,7 @@
 }
 
 - (void)onButtonClick {
-    [MGHModuleManager startModuleWithServiceProduction:NO fromViewController:self];
+    [MGHModuleManager startModuleWithServiceProduction:NO uid:@"61" channelId:@"0" fromViewController:self];
 }
 
 @end
