@@ -12,7 +12,7 @@ source 'git@gitlab.jinhui365.cn:iOS/JHJRSpecs.git'
 platform :ios, '9.0'
 
 target 'iOS-mingonghui-sample' do
-  pod 'MingonghuiSDK'
+  pod 'MingonghuiSDK', '0.1.1'
 
 end
 </p></pre>
@@ -27,6 +27,6 @@ end
 
 - (void)onButtonClick {
   // 参数NO表示使用测试环境，YES表示使用生产环境；参数self表示当前viewController。
-  [MGHModuleManager startModuleWithServiceProduction:NO fromViewController:self];
+  [MGHModuleManager startModuleWithServiceProduction:NO uid:@"61" channelId:@"0" fromViewController:self];
 }
 </p></pre>
