@@ -12,7 +12,7 @@ source 'git@gitlab.jinhui365.cn:iOS/JHJRSpecs.git'
 platform :ios, '9.0'
 
 target 'iOS-mingonghui-sample' do
-  pod 'MingonghuiSDK', '0.1.1'
+  pod 'MingonghuiSDK', '0.1.2'
 
 end
 </p></pre>
